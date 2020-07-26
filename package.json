@@ -1,0 +1,19 @@
+{
+  "name": "atscm-ts-transformer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sample on a typescript transformer",
+  "license": "UNLICENSED",
+  "author": "Lukas Hechenberger <npm@ls-age.com>",
+  "engines": {
+    "atserver": "3.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "atscm": "^1.0.1",
+    "prettier": "2.0.5",
+    "prettier-plugin-package": "1.0.0"
+  }
+}

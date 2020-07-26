@@ -1,0 +1,4 @@
+/atserver/*
+!/atserver/nodes.db
+!/atserver/atserver.ini
+node_modules
