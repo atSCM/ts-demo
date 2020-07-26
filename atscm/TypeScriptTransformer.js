@@ -1,22 +1,21 @@
+const { extname } = require('path');
 const { PartialTransformer } = require('atscm');
 const { transform } = require('@babel/core');
 
 module.exports = class TypeScriptTransformer extends PartialTransformer {
-    return file.extname === '.ts';
   shouldBeTransformed(file) {
+    console.error();
+    return extname(file.fileName) === '.ts';
   }
 
-  transformFromFilesystem(node, context) {
-    const { code } = transform(node.file.contents, {
-      filename: node.file.name, // I acutally need to specify a name when using transform
+  async transformFromFilesystem(node) {
+    if (!this.shouldBeTransformed(node)) return;
+
+    const { code } = transform(node.stringValue, {
+      filename: node.fileName, // I acutally need to specify a name when using transform
       presets: ['@babel/preset-typescript'],
     });
 
-    // Create new file with ES5 content
-    const result = node.file.clone(); // ?
-    result.contents = Buffer.from(code); // Error: cannot read 'contents' of undefined, so I guess node.file.clone() doesn't work
-
-    // We're done, pass the new file to other streams
-    context(null, result);
+    node.setRawValue(Buffer.from(code));
   }
 };
