@@ -1,4 +1,5 @@
 const { Atviseproject, NodeId } = require('atscm');
+const TypeScriptTransformer = require('./atscm/TypeScriptTransformer');
 
 /**
  * atscm configuration of atscm-ts-transformer.
@@ -30,6 +31,10 @@ class AtscmTsTransformer extends Atviseproject {
       new NodeId('SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS'),
       new NodeId('SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS'),
     ];
+  }
+
+  static get useTransformers() {
+    return super.useTransformers.concat(new TypeScriptTransformer());
   }
 }
 
