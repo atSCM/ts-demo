@@ -4,6 +4,8 @@
 >
 > **Note that this is work in progress**
 
+TypeScript support for atscm is still in a very early stage. See [atscm/atscm#407](https://github.com/atSCM/atscm/issues/407) for more details.
+
 ## How it works
 
 In order to get atscm to transpile TypeScript files, we need to do the following:
