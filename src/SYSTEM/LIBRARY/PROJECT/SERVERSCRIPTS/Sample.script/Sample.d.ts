@@ -1,5 +1,7 @@
 declare var base: {
   // Actual parameters
+
+  /** The test parameter */
   test: string;
 
   // Added by builder
