@@ -1,4 +1,3 @@
-const { Buffer } = require('buffer');
 const { PartialTransformer } = require('atscm');
 const { transform } = require('@babel/core');
 
