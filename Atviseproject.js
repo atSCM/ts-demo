@@ -1,5 +1,12 @@
-const { Atviseproject, NodeId } = require('atscm');
+const { Atviseproject, NodeId, ServerscriptTransformer, DisplayTransformer } = require('atscm');
 const TypeScriptTransformer = require('./atscm/TypeScriptTransformer');
+
+const useTypeScriptSources = (TransformerClass) =>
+  class extends TransformerClass {
+    static get scriptSourceExtension() {
+      return '.ts';
+    }
+  };
 
 /**
  * atscm configuration of atscm-ts-transformer.
@@ -33,8 +40,22 @@ class AtscmTsTransformer extends Atviseproject {
     ];
   }
 
+  static get nodesToWatch() {
+    return [];
+  }
+
   static get useTransformers() {
-    return super.useTransformers.concat(new TypeScriptTransformer());
+    const transformersToPatch = [DisplayTransformer, ServerscriptTransformer];
+
+    return (
+      super.useTransformers
+        // Do not use default display and script transformers
+        .filter((t) => !transformersToPatch.find((ban) => t instanceof ban))
+        // ... use ts consuming patches instead
+        .concat(transformersToPatch.map((T) => new (useTypeScriptSources(T))()))
+        // ... and one that does the actual ts compilation
+        .concat(new TypeScriptTransformer())
+    );
   }
 }
 
