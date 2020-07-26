@@ -4,7 +4,6 @@ const { transform } = require('@babel/core');
 
 module.exports = class TypeScriptTransformer extends PartialTransformer {
   shouldBeTransformed(file) {
-    console.error();
     return extname(file.fileName) === '.ts';
   }
 
