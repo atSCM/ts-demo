@@ -2,8 +2,8 @@ const { PartialTransformer } = require('atscm');
 const { transform } = require('@babel/core');
 
 module.exports = class TypeScriptTransformer extends PartialTransformer {
-  static shouldBeTransformed(file) {
     return file.extname === '.ts';
+  shouldBeTransformed(file) {
   }
 
   transformFromFilesystem(node, context) {
