@@ -1,3 +1,3 @@
 /// <reference path="./Sample.d.ts" />
 
-console.error({ test: base.test });
+console.log({ test: base.test });
