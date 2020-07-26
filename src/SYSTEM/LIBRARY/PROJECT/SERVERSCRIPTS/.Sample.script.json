@@ -1,0 +1,9 @@
+{
+  "nodeId": "SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.Sample",
+  "dataType": "XmlElement",
+  "arrayType": "Scalar",
+  "references": {
+    "HasTypeDefinition": ["VariableTypes.ATVISE.ScriptCode"],
+    "toParent": [47]
+  }
+}

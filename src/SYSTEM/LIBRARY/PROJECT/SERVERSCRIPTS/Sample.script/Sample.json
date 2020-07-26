@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "priority": "0"
+  },
+  "parameters": [
+    {
+      "name": "test",
+      "type": "string",
+      "trigger": "false",
+      "relative": "false",
+      "value": ""
+    }
+  ]
+}

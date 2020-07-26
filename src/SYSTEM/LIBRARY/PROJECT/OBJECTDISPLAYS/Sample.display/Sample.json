@@ -1,0 +1,12 @@
+{
+  "parameters": [
+    {
+      "behavior": "optional",
+      "desc": "Test parameter",
+      "name": "test",
+      "substitute": "",
+      "valuetype": "string",
+      "defaultvalue": ""
+    }
+  ]
+}

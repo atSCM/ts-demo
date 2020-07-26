@@ -1,0 +1,8 @@
+{
+  "nodeId": "SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.LAYOUTS",
+  "nodeClass": "Object",
+  "references": {
+    "HasTypeDefinition": [61],
+    "toParent": [47]
+  }
+}
