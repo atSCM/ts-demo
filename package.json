@@ -13,6 +13,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@babel/core": "7.10.5",
+    "@babel/preset-typescript": "7.10.4",
     "atscm": "^1.0.1",
     "prettier": "2.0.5",
     "prettier-plugin-package": "1.0.0"
