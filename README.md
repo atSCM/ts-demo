@@ -2,7 +2,7 @@
 
 > An atscm demo project that uses TypeScript source files.
 >
-> **Note that this is work in process**
+> **Note that this is work in progress**
 
 ## How it works
 
