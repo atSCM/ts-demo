@@ -9,6 +9,7 @@
     "atserver": "3.4.1"
   },
   "scripts": {
+    "format": "prettier --ignore-path .gitignore .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
